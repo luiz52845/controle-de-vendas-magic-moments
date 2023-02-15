@@ -5,6 +5,6 @@ services:
     environment:
       POSTGRES_USER: m4gicm0ments
       POSTGRES_PASSWORD: m4gic
-      POSTGRES_DB: magicmoments
+      POSTGRES_DB: postgres
     ports:
       - "5432:5432"
