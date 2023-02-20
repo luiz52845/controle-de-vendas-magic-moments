@@ -1,10 +1,15 @@
 package io.github.luizfernandes.Controle.de.vendas.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class Vendedor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -12,5 +17,8 @@ public class Vendedor {
     private Long id;
 
     private String nome;
+    private String SobreNome;
+    private String NomeCompleto;
+    private Integer NrCaixa;
 
 }

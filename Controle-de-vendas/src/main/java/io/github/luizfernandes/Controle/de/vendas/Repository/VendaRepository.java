@@ -30,4 +30,9 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
 //    List<Venda> buscarData( LocalDateTime dataInicial);
 
     List<Venda> findByDataVendaBetween(Date dataInicial, Date dataFinal);
+    //@Query (value = "SELECT e.* FROM venda e WHERE DATE(data_venda) =:dataVenda", nativeQuery = true)
+
+
+    @Query(value = "SELECT * FROM venda WHERE data_venda = :dataVenda", nativeQuery = true)
+    List<Venda> findByDataVenda(Date dataVenda);
 }

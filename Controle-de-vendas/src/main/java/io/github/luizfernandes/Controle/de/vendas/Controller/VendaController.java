@@ -48,4 +48,12 @@ public class VendaController {
         return vendaService.bustarEntreDatas(dataInicial, dataFinal);
     }
 
+    @GetMapping("dataVenda")
+    public List<Venda> buscarPorData(
+            @RequestParam("dataVenda") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date dataVenda)
+            {
+        return vendaService.buscarPorData(dataVenda);
+    }
+
+
 }

@@ -1,7 +1,10 @@
 package io.github.luizfernandes.Controle.de.vendas.Entity;
 
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -10,6 +13,8 @@ import java.util.Date;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,6 +30,7 @@ public class Venda {
     private BigDecimal valorVenda;
     @ManyToOne
     @JoinColumn(name = "fotografo_vinculado_id")
+    @Nullable
     private Fotografo fotografoVinculado;
     private Long fotos;
     private Long fotosVendidas;
@@ -33,6 +39,7 @@ public class Venda {
     private Vendedor vendedor;
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataVenda;
+    private String observacao;
 
 
 }

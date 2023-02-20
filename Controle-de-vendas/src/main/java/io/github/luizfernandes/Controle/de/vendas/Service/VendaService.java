@@ -19,7 +19,7 @@ public class VendaService {
     private VendaRepository vendaRepository;
 
     public ResponseEntity<Venda> save(@RequestBody Venda venda) {
-       // venda.setDataVenda(LocalDateTime.now( ).plusDays(-2));
+        venda.setDataVenda( new Date());
         return ResponseEntity.ok(vendaRepository.save(venda));
     }
 
@@ -39,6 +39,10 @@ public class VendaService {
 
     public List<Venda> bustarEntreDatas(Date dataInicial, Date dataFinal) {
         return vendaRepository.findByDataVendaBetween(dataInicial , dataFinal );
+    }
+
+    public List<Venda> buscarPorData(Date dataVenda) {
+        return vendaRepository.findByDataVenda(dataVenda);
     }
 
    // public List<Venda> buscarData(LocalDateTime dataInicial ) {
