@@ -14,6 +14,11 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class FotografoController {
 
+    @GetMapping("on")
+    public String on (){
+        return "ON";
+    }
+
     @Autowired
     private FotografoService fotografoService;
 

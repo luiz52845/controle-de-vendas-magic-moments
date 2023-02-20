@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
+
 public class Fotografo {
 
     @jakarta.persistence.Id
@@ -16,4 +16,12 @@ public class Fotografo {
     @Column(name = "id", nullable = false)
     private Long id;
     private String Nome;
+
+    public Fotografo() {
+    }
+
+    public Fotografo(String nome) {
+        this.Nome = nome;
+    }
+
 }

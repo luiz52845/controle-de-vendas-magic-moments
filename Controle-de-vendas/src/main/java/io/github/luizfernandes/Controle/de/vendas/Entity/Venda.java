@@ -1,7 +1,9 @@
 package io.github.luizfernandes.Controle.de.vendas.Entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
@@ -10,6 +12,8 @@ import java.util.Date;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Venda {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -19,7 +19,7 @@ public class VendaService {
     private VendaRepository vendaRepository;
 
     public ResponseEntity<Venda> save(@RequestBody Venda venda) {
-       // venda.setDataVenda(LocalDateTime.now( ).plusDays(-2));
+        venda.setDataVenda( new Date());
         return ResponseEntity.ok(vendaRepository.save(venda));
     }
 
